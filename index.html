@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Islamic Routine Tracker</title>
+
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      background: #ffffff;
+    }
+
+    body {
+      font-family: Arial;
+      padding: 20px;
+      background: #ffffff;
+      color: #111;
+    }
+
+    /* ✅ FIX HEADER */
+    h1 {
+      text-align: center;
+      color: #15803d;
+      position: sticky;
+      top: 0;
+      background: #ffffff;
+      z-index: 100;
+      margin: 0;
+      padding: 10px;
+    }
+
+    /* ✅ SCROLL AREA */
+    .table-container {
+      overflow: auto;
+      max-height: 80vh;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      background: #ffffff;
+    }
+
+    th, td {
+      border: 1px solid #ccc;
+      padding: 6px;
+      font-size: 11px;
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    /* ✅ FIX TOP ROW */
+    th {
+      background: #dcfce7;
+      color: #065f46;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+
+    td {
+      background: #ffffff;
+    }
+
+    /* ✅ FIX FIRST COLUMN */
+    td:first-child, th:first-child {
+      position: sticky;
+      left: 0;
+      background: #f9fafb;
+      z-index: 60;
+      text-align: left;
+      font-weight: bold;
+    }
+
+    input {
+      transform: scale(1.2);
+      cursor: pointer;
+      accent-color: #16a34a;
+    }
+
+    /* ✅ FOOTER */
+    .footer {
+      margin-top: 20px;
+      text-align: center;
+      font-size: 14px;
+      color: #065f46;
+      font-style: italic;
+      padding: 15px;
+      border-top: 1px solid #ccc;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>📊 Islamic Monthly Routine Tracker<br>09 Apr 2026 – 09 May 2026</h1>
+
+<div class="table-container">
+
+<table>
+
+<tr>
+<th>Routine (WHEN + WHAT)</th>
+
+<th>9</th><th>10</th><th>11</th><th>12</th><th>13</th><th>14</th><th>15</th>
+<th>16</th><th>17</th><th>18</th><th>19</th><th>20</th><th>21</th><th>22</th>
+<th>23</th><th>24</th><th>25</th><th>26</th><th>27</th><th>28</th><th>29</th>
+<th>30</th>
+<th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th>
+</tr>
+
+<script>
+const habits = [
+
+"Wake up: Alhamdulillahilladhi ahyana ba’da ma amatana wa ilayhin nushur",
+
+"Fajr (2 Sunnah + 2 Fard)",
+"After Fard (Fajr): SubhanAllah 33 / Alhamdulillah 33 / Allahu Akbar 34",
+"After Fard (Fajr): La ilaha illallahu wahdahu la sharika lahu, lahul mulku wa lahul hamdu, wa huwa ‘ala kulli shay’in qadeer (10x)",
+"After Fard (Fajr): Ayat al-Kursi",
+"After Fard (Fajr): Allahumma a‘inni ‘ala dhikrika wa shukrika wa husni ‘ibadatika",
+"After Fard (Fajr): Allahumma inni as’aluka ‘ilman nafi‘an, wa rizqan tayyiban, wa ‘amalan mutaqabbalan (3x)",
+
+"Dhuhr (2 Sunnah + 2 Sunnah + 4 Fard + 2 Sunnah)",
+"After Fard (Dhuhr): SubhanAllah 33 / Alhamdulillah 33 / Allahu Akbar 34",
+"After Fard (Dhuhr): La ilaha illallahu wahdahu la sharika lahu, lahul mulku wa lahul hamdu, wa huwa ‘ala kulli shay’in qadeer (1x)",
+"After Fard (Dhuhr): Ayat al-Kursi",
+"After Fard (Dhuhr): Allahumma a‘inni ‘ala dhikrika wa shukrika wa husni ‘ibadatika",
+
+"Asr (4 Fard)",
+"After Fard (Asr): SubhanAllah 33 / Alhamdulillah 33 / Allahu Akbar 34",
+"After Fard (Asr): La ilaha illallahu wahdahu la sharika lahu, lahul mulku wa lahul hamdu, wa huwa ‘ala kulli shay’in qadeer (1x)",
+"After Fard (Asr): Ayat al-Kursi",
+"After Fard (Asr): Allahumma a‘inni ‘ala dhikrika wa shukrika wa husni ‘ibadatika",
+"After Fard (Asr): Hasbiyallahu la ilaha illa huwa, ‘alayhi tawakkaltu, wa huwa rabbul ‘arshil ‘azeem (7x)",
+
+"Maghrib (3 Fard + 2 Sunnah)",
+"After Fard (Maghrib): SubhanAllah 33 / Alhamdulillah 33 / Allahu Akbar 34",
+"After Fard (Maghrib): La ilaha illallahu wahdahu la sharika lahu, lahul mulku wa lahul hamdu, wa huwa ‘ala kulli shay’in qadeer (10x)",
+"After Fard (Maghrib): Ayat al-Kursi",
+"After Fard (Maghrib): Allahumma a‘inni ‘ala dhikrika wa shukrika wa husni ‘ibadatika",
+"After Fard (Maghrib): Allahumma ajirni minan naar (7x)",
+
+"Isha (4 Fard + 2 Sunnah + 2 Nafl + Witr)",
+"After Fard (Isha): SubhanAllah 33 / Alhamdulillah 33 / Allahu Akbar 34",
+"After Fard (Isha): La ilaha illallahu wahdahu la sharika lahu, lahul mulku wa lahul hamdu, wa huwa ‘ala kulli shay’in qadeer (1x)",
+"After Fard (Isha): Ayat al-Kursi",
+"After Fard (Isha): Allahumma a‘inni ‘ala dhikrika wa shukrika wa husni ‘ibadatika",
+
+"Before Sleep: ...",
+"Sleep on right side",
+
+"Pray Istikhara (2 rak'ah) for guidance (compulsory daily)",
+
+"Friday: Surah Al-Kahf"
+
+];
+
+habits.forEach(habit => {
+  document.write("<tr>");
+  document.write("<td>"+habit+"</td>");
+
+  for(let i=1;i<=31;i++){
+    document.write("<td><input type='checkbox'></td>");
+  }
+
+  document.write("</tr>");
+});
+</script>
+
+</table>
+
+</div>
+
+<!-- ✅ FIXED SUNNAH QUOTE -->
+<div class="footer">
+  “The most beloved deeds to Allah are those that are consistent, even if small.”  
+  <br>— Prophet Muhammad ﷺ (Sahih al-Bukhari)
+</div>
+
+</body>
+</html>
